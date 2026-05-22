@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+
   <title>Ash Nicole's 18th Invitation</title>
 
   <!-- 💙 LINK PREVIEW -->
   <meta property="og:title" content="Ash Nicole's 18th Invitation">
   <meta property="og:description" content="Join us for a serene celebration.">
-  <meta property="og:image" content="https://YOUR-VERCEL-LINK.vercel.app/preview.jpg">
-  <meta property="og:url" content="https://YOUR-VERCEL-LINK.vercel.app">
+  <meta property="og:image" content="https://ash-s-debut-invitation-mci8.vercel.app/preview.jpg">
+  <meta property="og:url" content="https://ash-s-debut-invitation-mci8.vercel.app">
 
   <meta name="twitter:card" content="summary_large_image">
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
+
     body {
       margin: 0;
       background: black;
@@ -54,77 +56,121 @@
     }
 
     @keyframes rise {
+
       0% {
         transform: translateY(0) scale(0.6);
         opacity: 0;
       }
+
       10% {
         opacity: 0.95;
       }
+
       100% {
         transform: translateY(-1500px) translateX(120px) scale(1.4);
         opacity: 0;
       }
+
     }
 
     /* 🎵 MUSIC SCREEN */
     #musicScreen {
+
       height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(135deg, #cfe9ff, #a7d8ff, #e3f4ff);
+
+      background:
+      linear-gradient(135deg,
+      #cfe9ff,
+      #a7d8ff,
+      #e3f4ff);
+
       position: relative;
       overflow: hidden;
       z-index: 1;
+
       font-family: 'Playfair Display', serif;
     }
 
     #musicScreen::before {
+
       content: "";
+
       position: absolute;
       inset: 0;
+
       backdrop-filter: blur(25px);
-      background: rgba(255,255,255,0.15);
+
+      background:
+      rgba(255,255,255,0.15);
+
       z-index: 1;
     }
 
     .music-card {
+
       position: relative;
       z-index: 5;
+
       width: 90%;
       max-width: 760px;
+
       padding: 65px 35px;
+
       border-radius: 30px;
-      background: rgba(255,255,255,0.68);
+
+      background:
+      rgba(255,255,255,0.68);
+
       backdrop-filter: blur(30px);
+
       box-shadow:
         0 25px 70px rgba(0, 60, 120, 0.22),
         inset 0 0 25px rgba(255,255,255,0.7);
+
       text-align: center;
     }
 
     .music-card h2 {
+
       font-size: 48px;
       font-weight: 300;
       line-height: 1.25;
+
       color: #2a4f6e;
+
       margin: 0 0 55px;
     }
 
     .btn {
+
       display: block;
+
       width: 62%;
       min-width: 280px;
+
       margin: 26px auto;
+
       padding: 22px 18px;
+
       border-radius: 14px;
       border: none;
+
       font-size: 34px;
+
       cursor: pointer;
+
       transition: all 0.3s ease;
+
       font-family: 'Playfair Display', serif;
-      background: linear-gradient(135deg, #7fc8ff, #a7d8ff);
+
+      background:
+      linear-gradient(135deg,
+      #7fc8ff,
+      #a7d8ff);
+
       color: #0f3554;
     }
 
@@ -140,45 +186,68 @@
 
     /* ⏳ COUNTDOWN */
     .countdown-wrap {
+
       position: sticky;
       top: 18px;
+
       z-index: 8;
+
       width: 100%;
+
       display: flex;
       justify-content: center;
+
       margin-top: -10px;
       margin-bottom: -210px;
+
       pointer-events: none;
     }
 
     .countdown {
+
       width: 84%;
       max-width: 760px;
+
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+
+      grid-template-columns:
+      repeat(2, 1fr);
+
       gap: 34px 80px;
+
       padding: 38px 48px;
+
       border-radius: 32px;
-      background: rgba(210, 238, 255, 0.75);
+
+      background:
+      rgba(210, 238, 255, 0.75);
+
       backdrop-filter: blur(24px);
+
       text-align: center;
     }
 
     .box div {
+
       font-size: 70px;
       color: #1f4564;
     }
 
     .box small {
+
       display: block;
+
       margin-top: 12px;
+
       font-size: 24px;
+
       color: #2a4f6e;
     }
 
     @media (max-width: 600px) {
 
       .music-card {
+
         max-width: 92%;
         padding: 55px 22px;
       }
@@ -188,13 +257,17 @@
       }
 
       .btn {
+
         width: 78%;
         font-size: 28px;
       }
 
       .countdown {
+
         width: 82%;
+
         gap: 28px 48px;
+
         padding: 32px 34px;
       }
 
@@ -209,6 +282,7 @@
       .countdown-wrap {
         margin-bottom: -185px;
       }
+
     }
 
   </style>
@@ -217,12 +291,25 @@
 <body>
 
 <div id="musicScreen">
-  <div class="music-card">
-    <h2>Would you like to play<br>background music?</h2>
 
-    <button class="btn" onclick="start(true)">Yes, play music</button>
-    <button class="btn" onclick="start(false)">No, thanks</button>
+  <div class="music-card">
+
+    <h2>
+      Would you like to play
+      <br>
+      background music?
+    </h2>
+
+    <button class="btn" onclick="start(true)">
+      Yes, play music
+    </button>
+
+    <button class="btn" onclick="start(false)">
+      No, thanks
+    </button>
+
   </div>
+
 </div>
 
 <audio id="music" loop>
@@ -236,12 +323,31 @@
 
   <!-- COUNTDOWN -->
   <div class="countdown-wrap">
+
     <div class="countdown">
-      <div class="box"><div id="days">0</div><small>Days</small></div>
-      <div class="box"><div id="hours">0</div><small>Hours</small></div>
-      <div class="box"><div id="minutes">0</div><small>Minutes</small></div>
-      <div class="box"><div id="seconds">0</div><small>Seconds</small></div>
+
+      <div class="box">
+        <div id="days">0</div>
+        <small>Days</small>
+      </div>
+
+      <div class="box">
+        <div id="hours">0</div>
+        <small>Hours</small>
+      </div>
+
+      <div class="box">
+        <div id="minutes">0</div>
+        <small>Minutes</small>
+      </div>
+
+      <div class="box">
+        <div id="seconds">0</div>
+        <small>Seconds</small>
+      </div>
+
     </div>
+
   </div>
 
   <img src="slide2.jpg">
@@ -255,22 +361,32 @@
 <script>
 
 function start(playMusic) {
+
   document.getElementById("musicScreen").style.display = "none";
+
   document.getElementById("content").style.display = "block";
 
   if (playMusic) {
-    let audio = document.getElementById("music");
+
+    let audio =
+    document.getElementById("music");
+
     audio.volume = 0.6;
+
     audio.play().catch(()=>{});
+
   }
+
 }
 
 // 🇵🇭 June 17, 2026 • 5:30 PM Philippine Time
-var eventDate = new Date("2026-06-17T17:30:00+08:00").getTime();
+var eventDate =
+new Date("2026-06-17T17:30:00+08:00").getTime();
 
 setInterval(function () {
 
   var now = new Date().getTime();
+
   var distance = eventDate - now;
 
   if (distance <= 0) {
@@ -284,38 +400,47 @@ setInterval(function () {
   }
 
   document.getElementById("days").innerHTML =
-    Math.floor(distance / (1000 * 60 * 60 * 24));
+  Math.floor(distance / (1000 * 60 * 60 * 24));
 
   document.getElementById("hours").innerHTML =
-    Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  Math.floor((distance % (1000 * 60 * 60 * 24))
+  / (1000 * 60 * 60));
 
   document.getElementById("minutes").innerHTML =
-    Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  Math.floor((distance % (1000 * 60 * 60))
+  / (1000 * 60));
 
   document.getElementById("seconds").innerHTML =
-    Math.floor((distance % (1000 * 60)) / 1000);
+  Math.floor((distance % (1000 * 60))
+  / 1000);
 
 }, 1000);
 
 // 🌊 BUBBLES
 for (let i = 0; i < 42; i++) {
 
-  let bubble = document.createElement("div");
+  let bubble =
+  document.createElement("div");
+
   bubble.className = "bubble";
 
-  let size = 35 + Math.random() * 115;
+  let size =
+  35 + Math.random() * 115;
 
   bubble.style.width = size + "px";
   bubble.style.height = size + "px";
-  bubble.style.left = Math.random() * 100 + "vw";
+
+  bubble.style.left =
+  Math.random() * 100 + "vw";
 
   bubble.style.animationDuration =
-    (8 + Math.random() * 12) + "s";
+  (8 + Math.random() * 12) + "s";
 
   bubble.style.animationDelay =
-    Math.random() * 14 + "s";
+  Math.random() * 14 + "s";
 
   document.body.appendChild(bubble);
+
 }
 
 </script>
