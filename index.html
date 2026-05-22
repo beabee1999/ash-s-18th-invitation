@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>18th Birthday Invite</title>
+  <title>Ash Nicole's 18th Invitation</title>
+
+  <!-- 💙 LINK PREVIEW -->
+  <meta property="og:title" content="Ash Nicole's 18th Invitation">
+  <meta property="og:description" content="Join us for a serene celebration.">
+  <meta property="og:image" content="https://YOUR-VERCEL-LINK.vercel.app/preview.jpg">
+  <meta property="og:url" content="https://YOUR-VERCEL-LINK.vercel.app">
+
+  <meta name="twitter:card" content="summary_large_image">
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -167,6 +175,42 @@
       font-size: 24px;
       color: #2a4f6e;
     }
+
+    @media (max-width: 600px) {
+
+      .music-card {
+        max-width: 92%;
+        padding: 55px 22px;
+      }
+
+      .music-card h2 {
+        font-size: 38px;
+      }
+
+      .btn {
+        width: 78%;
+        font-size: 28px;
+      }
+
+      .countdown {
+        width: 82%;
+        gap: 28px 48px;
+        padding: 32px 34px;
+      }
+
+      .box div {
+        font-size: 58px;
+      }
+
+      .box small {
+        font-size: 20px;
+      }
+
+      .countdown-wrap {
+        margin-bottom: -185px;
+      }
+    }
+
   </style>
 </head>
 
@@ -175,6 +219,7 @@
 <div id="musicScreen">
   <div class="music-card">
     <h2>Would you like to play<br>background music?</h2>
+
     <button class="btn" onclick="start(true)">Yes, play music</button>
     <button class="btn" onclick="start(false)">No, thanks</button>
   </div>
@@ -186,8 +231,10 @@
 
 <div id="content">
 
+  <!-- SLIDE 1 -->
   <img src="slide1.jpg">
 
+  <!-- COUNTDOWN -->
   <div class="countdown-wrap">
     <div class="countdown">
       <div class="box"><div id="days">0</div><small>Days</small></div>
@@ -206,6 +253,7 @@
 </div>
 
 <script>
+
 function start(playMusic) {
   document.getElementById("musicScreen").style.display = "none";
   document.getElementById("content").style.display = "block";
@@ -217,40 +265,59 @@ function start(playMusic) {
   }
 }
 
-// 🇵🇭 FIXED: Philippine Time (UTC+8)
+// 🇵🇭 June 17, 2026 • 5:30 PM Philippine Time
 var eventDate = new Date("2026-06-17T17:30:00+08:00").getTime();
 
 setInterval(function () {
+
   var now = new Date().getTime();
   var distance = eventDate - now;
+
+  if (distance <= 0) {
+
+    document.getElementById("days").innerHTML = 0;
+    document.getElementById("hours").innerHTML = 0;
+    document.getElementById("minutes").innerHTML = 0;
+    document.getElementById("seconds").innerHTML = 0;
+
+    return;
+  }
 
   document.getElementById("days").innerHTML =
     Math.floor(distance / (1000 * 60 * 60 * 24));
 
   document.getElementById("hours").innerHTML =
-    Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+    Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 
   document.getElementById("minutes").innerHTML =
-    Math.floor((distance % (1000*60*60)) / (1000*60));
+    Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 
   document.getElementById("seconds").innerHTML =
-    Math.floor((distance % (1000*60)) / 1000);
+    Math.floor((distance % (1000 * 60)) / 1000);
+
 }, 1000);
 
 // 🌊 BUBBLES
 for (let i = 0; i < 42; i++) {
+
   let bubble = document.createElement("div");
   bubble.className = "bubble";
 
   let size = 35 + Math.random() * 115;
+
   bubble.style.width = size + "px";
   bubble.style.height = size + "px";
   bubble.style.left = Math.random() * 100 + "vw";
-  bubble.style.animationDuration = (8 + Math.random() * 12) + "s";
-  bubble.style.animationDelay = Math.random() * 14 + "s";
+
+  bubble.style.animationDuration =
+    (8 + Math.random() * 12) + "s";
+
+  bubble.style.animationDelay =
+    Math.random() * 14 + "s";
 
   document.body.appendChild(bubble);
 }
+
 </script>
 
 </body>
